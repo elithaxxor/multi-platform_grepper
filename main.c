@@ -38,7 +38,7 @@ char* execute_command(const char* cmd) {
             pclose(pipe);
             return NULL; // Return NULL on error
         }
-        result = static_cast<char*>(temp);
+        result = (char*)temp;
         strcpy(result + result_size, buffer); // Copy the chunk
         result_size += chunk_size;
     }
